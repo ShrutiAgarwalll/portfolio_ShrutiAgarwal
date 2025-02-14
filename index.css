@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-light-background dark:bg-dark-background text-light-textPrimary dark:text-dark-textPrimary transition-colors duration-300;
+}
+
+.nav-link {
+  @apply cursor-pointer hover:text-light-secondary dark:hover:text-dark-secondary transition-colors duration-300;
+}
+
+.section-title {
+  @apply text-3xl md:text-4xl font-bold mb-8 text-light-textPrimary dark:text-dark-textPrimary relative;
+}
+
+.section-title::after {
+  content: "";
+  @apply absolute bottom-0 left-0 w-20 h-1 bg-light-secondary dark:bg-dark-secondary mt-2;
+}
+
+.skill-tag {
+  @apply px-4 py-2 rounded-full bg-light-secondary/20 dark:bg-dark-secondary/20 text-light-secondary dark:text-dark-secondary m-1 transition-all duration-300 hover:scale-110;
+}
+
+.timeline-item {
+  @apply relative pl-8 pb-8 border-l-2 border-light-secondary dark:border-dark-secondary last:border-0 last:pb-0;
+}
+
+.timeline-dot {
+  @apply absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-light-secondary dark:bg-dark-secondary;
+}
+
+.card-hover {
+  @apply hover:shadow-xl hover:scale-105 transition-all duration-300;
+}
+
+/* Smooth transitions for theme changes */
+*, *::before, *::after {
+  @apply transition-colors duration-300;
+}
