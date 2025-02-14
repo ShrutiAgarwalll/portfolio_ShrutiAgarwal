@@ -1,23 +1,43 @@
 import { motion } from 'framer-motion';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope, FaFacebook, FaInstagram, FaYoutube, FaMedium } from 'react-icons/fa';
 
 const Contact = () => {
   const socialLinks = [
     {
       name: 'GitHub',
       icon: <FaGithub size={24} />,
-      url: 'https://github.com/yourusername'
+      url: 'https://github.com/ShrutiAgarwalll'
     },
     {
       name: 'LinkedIn',
       icon: <FaLinkedin size={24} />,
-      url: 'https://linkedin.com/in/yourusername'
+      url: 'https://www.linkedin.com/in/shruti-agarwal-593908221'
     },
     {
       name: 'Email',
       icon: <FaEnvelope size={24} />,
-      url: 'mailto:your.email@example.com'
-    }
+      url: 'mailto:shrutiag1518@gmail.com'
+    },
+    {
+      name: 'Youtube',
+      icon: <FaYoutube size={24} />,
+      url: ''
+    },
+    {
+      name: 'Instagram',
+      icon: <FaInstagram size={24} />,
+      url: 'https://www.instagram.com/shrutii_agarwall/'
+    },
+    {
+      name: 'Twitter',
+      icon: <FaTwitter size={24} />,
+      url: ''
+    },
+    {
+      name: 'Medium',
+      icon: <FaMedium size={24} />,
+      url: ''
+    },
   ];
 
   return (
@@ -33,19 +53,21 @@ const Contact = () => {
         
         <div className="flex justify-center space-x-8 mt-8">
           {socialLinks.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              className="text-textPrimary hover:text-secondary transition-colors duration-300"
-            >
-              {link.icon}
-            </motion.a>
+            link.url && (
+              <motion.a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="text-textPrimary hover:text-secondary transition-colors duration-300"
+              >
+                {link.icon}
+              </motion.a>
+            )
           ))}
         </div>
 
