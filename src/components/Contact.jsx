@@ -29,7 +29,7 @@ const Contact = () => {
         viewport={{ once: true }}
         className="text-center"
       >
-        <h2 className="section-title text-center">Contact Me</h2>
+        <h2 className="section-title text-left">Contact Me</h2>
         
         <div className="flex justify-center space-x-8 mt-8">
           {socialLinks.map((link, index) => (
