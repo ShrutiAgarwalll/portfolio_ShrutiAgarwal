@@ -8,10 +8,9 @@ import Contact from './components/Contact';
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') || 'dark'; 
-    }
-    return 'dark'; 
+    // Set dark theme as default, regardless of localStorage
+    document.documentElement.classList.add('dark');
+    return 'dark';
   });
 
   useEffect(() => {
